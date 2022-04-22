@@ -6,10 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="Style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
-<div id="red"> hello</div>
-<div class="a"> goodbye</div>
+<div id="leftside">
+<div id="headerbar">
+   <img id="mooseimage" src="./images/moose1.jpg" alt="Moose">
+    Moose
+</div>
+</div>
+
+<div id="rightside">
+<div id="formcontainer">
+<div id="signupheader">Sign Up</div>
+<form action="http://httpbin.org/post" method="post" id="theform">
+    <label for="first_name" >FIRST NAME</label>
+    <br>
+    <input type="text" id="first_name" name="first_name" minlength="1" maxlength="20" required="required">
+    <br> 
+    <label for="email_1">EMAIL</label>
+    <br>
+    <input type="email" id="email_1" name="email_1"  maxlength="100" required="required" title="Format: Email@gmail.com">
+    <br>
+    <label for="password_1">PASSWORD</label>
+    <br>
+    <input type="password" id="password_1" name="password_1"  maxlength="30" required="required">
+    <br>
+    <label for="last_name">LAST NAME</label>
+    <br>
+    <input type="text" id="last_name" name="last_name"  maxlength="20" required="required">
+    <br>
+    <label for="phone_number">PHONE NUMBER</label>
+    <br>
+    <input type="tel" id="phone_number" name="phone_number"  maxlength="20" required="required" title="Format: 3023422932">
+    <br>
+    <label for="confirmpassword">CONFIRM PASSWORD</label>
+    <br>
+    <input type="password" id="confirmpassword" name="confirmpassword"  maxlength="30" required="required">
+
+
+</form>
+
+</div>
+<button id="buttonsubmit" type="submit" >Create Account</button>
+</div>
 
 </body>
 </html>
