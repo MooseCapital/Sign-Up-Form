@@ -2,30 +2,46 @@ let theform = document.querySelector("#theform");
 let buttonsubmit = document.querySelector("#buttonsubmit");
 let pass = document.querySelector("#password_1");
 let confirm_pass = document.querySelector("#confirmpassword");
+let right = document.querySelector("#rightside");
 buttonsubmit.addEventListener("click", submitForm);
 
 function submitForm() {
-    theform.submit();
-    console.log("clicked")
+    if (validate()) {
+        theform.submit();
+        console.log("clicked");
+    }
+       
+    
+   
+
+    console.log("error")
 }
 
-
-
-confirm_pass.addEventListener("oninput", validate);
+let passError = document.createElement("p");
+passError.textContent = "Passwords Do Not Match";
+passError.style.color = "red";
+passError.style.position = "absolute";
+passError.style.fontSize = "14px";
+passError.style.top = "640px";
+passError.style.left = "1035px";
+confirm_pass.addEventListener("keyup", validate);
 
 function validate() {
 if(pass.value !== confirm_pass.value) {
-confirm_pass.setCustomValidity("The Passwords do not match");
-console.log("error not a match")
+    right.appendChild(passError);
+console.log("error not a match");
+    return false;
+} else if (pass.value === "" || confirm_pass.value === ""){
+return false
 } else {
-    confirm_pass.setCustomValidity("");
-    console.log("its a match")
+
+        passError.remove();
+        console.log("its a match");
+        return true
 }
 
 }
-// function test() {
-// console.log("works")
-// }
+
 
 
 
